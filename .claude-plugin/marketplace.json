@@ -1,0 +1,78 @@
+{
+  "name": "source-build-au",
+  "owner": {
+    "name": "sjbrenchley89",
+    "url": "https://github.com/sjbrenchley89"
+  },
+  "description": "Aggregated Claude Code skill collection: 54 trading skills, 40+ marketing skills, and 270+ engineering/product/leadership skills",
+  "metadata": {
+    "version": "1.0.0",
+    "description": "Source Build AU aggregates production-ready skill packages from multiple upstream repositories into a single installable collection."
+  },
+  "plugins": [
+    {
+      "name": "claude-trading-skills",
+      "source": "https://github.com/sjbrenchley89/claude-trading-skills",
+      "description": "54 trading and market analysis skills: technical analysis, market breadth, sector rotation, earnings plays, dividend screening, backtesting, portfolio management, edge strategy development, and more.",
+      "version": "1.0.0",
+      "keywords": [
+        "trading",
+        "finance",
+        "stocks",
+        "technical-analysis",
+        "backtesting",
+        "portfolio",
+        "options",
+        "dividends"
+      ],
+      "category": "finance"
+    },
+    {
+      "name": "marketing-skills",
+      "source": "https://github.com/sjbrenchley89/marketingskills",
+      "description": "40+ marketing and growth skills: copywriting, CRO, SEO, AI SEO, paid ads, ad creative, email, social media, video, pricing, referrals, analytics, customer research, and more.",
+      "version": "2.0.0",
+      "keywords": [
+        "marketing",
+        "copywriting",
+        "seo",
+        "cro",
+        "ads",
+        "email",
+        "growth",
+        "analytics"
+      ],
+      "category": "marketing"
+    },
+    {
+      "name": "claude-code-skills",
+      "source": "https://github.com/sjbrenchley89/claude-skills1",
+      "description": "270+ production-ready skills across 9 domains: engineering (advanced + core), marketing, c-level advisory, product, regulatory/QMS, project management, business growth, and finance.",
+      "version": "2.6.1",
+      "keywords": [
+        "engineering",
+        "product",
+        "leadership",
+        "compliance",
+        "finance",
+        "marketing",
+        "project-management"
+      ],
+      "category": "development"
+    },
+    {
+      "name": "awesome-claude-code-subagents",
+      "source": "https://github.com/sjbrenchley89/awesome-claude-code-subagents",
+      "description": "Curated collection of Claude Code subagents across development, infrastructure, data/AI, quality, security, and specialized domains.",
+      "version": "1.0.0",
+      "keywords": [
+        "subagents",
+        "multi-agent",
+        "orchestration",
+        "development",
+        "infrastructure"
+      ],
+      "category": "agents"
+    }
+  ]
+}
