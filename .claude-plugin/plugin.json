@@ -1,7 +1,7 @@
 {
   "name": "source-build-au",
   "description": "Aggregated Claude Code skill collection: 54 trading skills, 40+ marketing skills, and 270+ engineering/product/leadership skills from multiple upstream packages.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "sjbrenchley89"
   },
@@ -12,6 +12,7 @@
   "imports": [
     "sjbrenchley89/claude-trading-skills",
     "sjbrenchley89/marketingskills",
-    "sjbrenchley89/claude-skills1"
+    "sjbrenchley89/claude-skills1",
+    "sjbrenchley89/awesome-claude-code-subagents"
   ]
 }
