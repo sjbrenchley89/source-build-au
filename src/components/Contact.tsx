@@ -24,7 +24,7 @@ export default function Contact() {
       const hls = new Hls()
       hls.loadSource(HLS_SRC)
       hls.attachMedia(video)
-      return () => hls.destroy()
+      return () => { hls.destroy() }
     } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
       video.src = HLS_SRC
     }
@@ -40,7 +40,7 @@ export default function Contact() {
       ease: 'none',
       repeat: -1,
     })
-    return () => tween.kill()
+    return () => { tween.kill() }
   }, [])
 
   return (
