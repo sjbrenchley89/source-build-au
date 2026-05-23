@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 
 const STATS = [
-  { value: '20+', label: 'Years Experience' },
-  { value: '95+', label: 'Projects Done' },
-  { value: '200%', label: 'Satisfied Clients' },
+  { value: '500+', label: 'Projects Supplied' },
+  { value: '10+', label: 'Years Experience' },
+  { value: '100%', label: 'AU/NZ Compliant' },
 ]
 
 const fadeUp = {
@@ -33,7 +33,7 @@ export default function Stats() {
               <span
                 className="text-5xl md:text-6xl font-display italic mb-2"
                 style={{
-                  background: 'linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)',
+                  background: 'linear-gradient(90deg, #F26522 0%, #D4561A 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
