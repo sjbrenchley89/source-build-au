@@ -3,6 +3,10 @@ import animate from 'tailwindcss-animate'
 
 const config: Config = {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
+  safelist: [
+    'md:col-span-5',
+    'md:col-span-7',
+  ],
   theme: {
     extend: {
       fontFamily: {

@@ -5,7 +5,7 @@ const PROJECTS = [
     id: 1,
     title: 'Automotive Motion',
     tag: 'Motion Design',
-    span: 7,
+    colSpan: 'md:col-span-7',
     aspect: 'aspect-[4/3]',
     img: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80',
   },
@@ -13,7 +13,7 @@ const PROJECTS = [
     id: 2,
     title: 'Urban Architecture',
     tag: 'Photography',
-    span: 5,
+    colSpan: 'md:col-span-5',
     aspect: 'aspect-[4/3]',
     img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80',
   },
@@ -21,7 +21,7 @@ const PROJECTS = [
     id: 3,
     title: 'Human Perspective',
     tag: 'Portrait',
-    span: 5,
+    colSpan: 'md:col-span-5',
     aspect: 'aspect-[4/3]',
     img: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80',
   },
@@ -29,7 +29,7 @@ const PROJECTS = [
     id: 4,
     title: 'Brand Identity',
     tag: 'Branding',
-    span: 7,
+    colSpan: 'md:col-span-7',
     aspect: 'aspect-[4/3]',
     img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80',
   },
@@ -78,7 +78,7 @@ export default function SelectedWorks() {
           {PROJECTS.map((project, i) => (
             <motion.div
               key={project.id}
-              className={`md:col-span-${project.span}`}
+              className={project.colSpan}
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
