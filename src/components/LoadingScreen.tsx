@@ -82,7 +82,7 @@ export default function LoadingScreen({ onComplete }: Props) {
           className="h-full accent-gradient origin-left transition-transform duration-75"
           style={{
             transform: `scaleX(${count / 100})`,
-            boxShadow: '0 0 8px rgba(137, 170, 204, 0.35)',
+            boxShadow: '0 0 10px rgba(242, 101, 34, 0.5)',
           }}
         />
       </div>
