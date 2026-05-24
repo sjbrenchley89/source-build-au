@@ -1,19 +1,872 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Source Build Australia — Premium Construction &amp; Renovation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Source Build Australia — Specialist Building Product Supply Partner</title>
+<meta name="description" content="Source Build Australia is a specialist building product supply partner for builders, developers and contractors across all Australian states and territories. We source, coordinate and supply building products to your specifications, within your budget and by your delivery date. Complete Satisfaction Supply Guarantee backs every proposal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0a;
+  --white:#f3f0eb;
+  --rust:#bf3d0a;
+  --rust-dark:#9a2f07;
+  --rust-light:#e06535;
+  --sand:#cfc0a5;
+  --charcoal:#1e1e1e;
+  --char2:#272727;
+  --mid:#5e5955;
+  --line:rgba(243,240,235,.09);
+  --line2:rgba(243,240,235,.15);
+  --green:#1a5c35;
+  --green-mid:#226b3f;
+  --green-light:#2e9158;
+  --font-display:'Barlow Condensed',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --font-mono:'DM Mono',monospace;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;height:72px;
+  border-bottom:1px solid var(--line);
+  background:rgba(10,10,10,.96);
+  backdrop-filter:blur(16px);
+}
+.nav-brand{text-decoration:none;display:flex;flex-direction:column;gap:1px}
+.nav-brand-name{font-family:var(--font-display);font-size:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);line-height:1}
+.nav-brand-name span{color:var(--rust)}
+.nav-brand-tag{font-family:var(--font-mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid)}
+.nav-menu{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-menu a{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--sand);text-decoration:none;transition:color .2s}
+.nav-menu a:hover{color:var(--white)}
+.nav-btn{background:var(--rust);color:var(--white)!important;padding:9px 22px;border-radius:1px;transition:background .2s!important}
+.nav-btn:hover{background:var(--rust-dark)!important}
+
+/* ─── GUARANTEE BAR ─── */
+.g-bar{
+  background:var(--green);
+  padding:10px 52px;
+  display:flex;align-items:center;justify-content:center;gap:0;
+  margin-top:72px;
+  position:relative;overflow:hidden;
+}
+.g-bar-inner{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.g-bar-label{font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.95)}
+.g-bar-div{width:1px;height:16px;background:rgba(255,255,255,.25)}
+.g-bar-item{display:flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.g-bar-item svg{width:11px;height:11px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:2.5;flex-shrink:0}
+
+/* ─── HERO ─── */
+#hero{min-height:calc(100vh - 106px);display:grid;grid-template-columns:1fr 1fr}
+.hero-l{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 52px 80px;
+  border-right:1px solid var(--line);
+  position:relative;
+}
+.hero-l::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--line);
+}
+.hero-eyebrow{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--rust-light);margin-bottom:32px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--rust)}
+.hero-h1{
+  font-family:var(--font-display);
+  font-size:clamp(76px,8.5vw,128px);
+  font-weight:600;
+  line-height:.86;
+  letter-spacing:.01em;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:36px;
+}
+.hero-h1 em{color:var(--rust);font-style:normal;display:block}
+.hero-p{
+  font-size:17px;font-weight:300;color:var(--sand);line-height:1.82;
+  max-width:500px;margin-bottom:48px;
+}
+.hero-p strong{color:var(--white);font-weight:500}
+.hero-cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:52px}
+.btn-p{
+  background:var(--rust);color:var(--white);
+  padding:14px 36px;border-radius:1px;
+  text-decoration:none;font-weight:500;font-size:15px;
+  letter-spacing:.03em;
+  transition:background .2s,transform .15s;
+  display:inline-block;
+}
+.btn-p:hover{background:var(--rust-dark);transform:translateY(-1px)}
+.btn-o{
+  border:1px solid var(--line2);color:var(--sand);
+  padding:13px 28px;border-radius:1px;
+  text-decoration:none;font-size:13px;
+  font-family:var(--font-mono);letter-spacing:.08em;text-transform:uppercase;
+  transition:all .2s;
+}
+.btn-o:hover{border-color:var(--rust);color:var(--white)}
+.hero-segments{display:flex;flex-wrap:wrap;gap:7px}
+.seg-tag{
+  font-family:var(--font-mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+  padding:5px 12px;border:1px solid var(--line);color:var(--mid);border-radius:1px;
+}
+/* Hero right */
+.hero-r{
+  display:flex;flex-direction:column;
+  background:var(--charcoal);
+  position:relative;overflow:hidden;
+}
+.hero-r-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),
+  linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+.hero-r-content{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
+.hero-step{
+  flex:1;padding:44px 48px;
+  border-bottom:1px solid var(--line);
+  display:flex;gap:28px;align-items:flex-start;
+  transition:background .3s;
+  cursor:default;
+}
+.hero-step:last-child{border-bottom:none}
+.hero-step:hover{background:rgba(191,61,10,.05)}
+.hero-step-n{
+  font-family:var(--font-display);font-size:72px;font-weight:300;
+  color:rgba(191,61,10,.15);line-height:1;flex-shrink:0;width:72px;
+  text-align:right;
+}
+.hero-step-body{}
+.hero-step-kicker{font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust-light);margin-bottom:8px}
+.hero-step-title{font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+.hero-step-desc{font-size:13.5px;font-weight:300;color:var(--sand);line-height:1.7}
+
+/* ─── MARQUEE ─── */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;overflow:hidden;background:var(--char2)}
+.marquee-track{display:flex;animation:mq 45s linear infinite;white-space:nowrap}
+.mq-item{font-family:var(--font-display);font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);padding:0 32px}
+.mq-item span{color:var(--rust);margin-right:32px}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SECTION UTILITIES ─── */
+section{padding:100px 52px}
+.sec-kicker{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust-light);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-kicker::before{content:'';display:block;width:22px;height:1px;background:var(--rust)}
+.sec-h{font-family:var(--font-display);font-size:clamp(44px,4.8vw,70px);font-weight:600;line-height:.91;text-transform:uppercase;letter-spacing:.01em;color:var(--white);margin-bottom:22px}
+.sec-h em{color:var(--rust);font-style:normal}
+.sec-p{font-size:16px;font-weight:300;color:var(--sand);line-height:1.8;max-width:620px}
+
+/* ─── BRIEF SECTION ─── */
+#brief{background:var(--charcoal)}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+.brief-col{background:var(--charcoal);padding:48px 40px}
+.brief-col-title{font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--rust-light);margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.brief-col-title::before{content:'';display:block;width:16px;height:1px;background:var(--rust)}
+.brief-items{display:flex;flex-direction:column;gap:1px;background:var(--line)}
+.brief-item{background:var(--black);padding:18px 20px;display:flex;align-items:center;gap:16px}
+.brief-item-dot{width:6px;height:6px;background:var(--rust);border-radius:50%;flex-shrink:0}
+.brief-item-text{font-size:15px;font-weight:300;color:var(--white)}
+.brief-item-text strong{font-weight:500}
+.brief-promise{margin-top:1px;background:rgba(191,61,10,.08);border:1px solid rgba(191,61,10,.2);padding:20px;display:flex;gap:14px;align-items:flex-start}
+.brief-promise-icon{color:var(--rust-light);font-family:var(--font-display);font-size:28px;line-height:1;flex-shrink:0}
+.brief-promise-text{font-size:13px;font-weight:300;color:var(--sand);line-height:1.7}
+.brief-promise-text strong{color:var(--white);font-weight:500;display:block;margin-bottom:4px;font-size:14px}
+
+/* ─── WHO WE SERVE ─── */
+#serve{background:var(--black)}
+.serve-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px}
+.serve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.serve-card{background:var(--black);padding:36px 28px;transition:background .25s}
+.serve-card:hover{background:var(--charcoal)}
+.serve-icon{width:40px;height:40px;border:1px solid rgba(191,61,10,.45);border-radius:1px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:border-color .2s}
+.serve-card:hover .serve-icon{border-color:var(--rust)}
+.serve-icon svg{width:18px;height:18px;stroke:var(--rust);fill:none;stroke-width:1.5}
+.serve-title{font-family:var(--font-display);font-size:21px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:10px}
+.serve-desc{font-size:13px;font-weight:300;color:var(--sand);line-height:1.7;margin-bottom:16px}
+.serve-tags{display:flex;flex-wrap:wrap;gap:5px}
+.stag{font-family:var(--font-mono);font-size:8px;letter-spacing:.08em;color:var(--rust-light);border:1px solid rgba(191,61,10,.18);padding:3px 8px;border-radius:1px}
+
+/* ─── PRODUCTS ─── */
+#products{background:var(--charcoal)}
+.prod-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:52px}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.prod-card{background:var(--charcoal);padding:26px 20px;transition:background .2s}
+.prod-card:hover{background:#2e2e2e}
+.prod-icon{width:38px;height:38px;border:1px solid rgba(191,61,10,.35);border-radius:1px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:border-color .2s}
+.prod-card:hover .prod-icon{border-color:var(--rust-light)}
+.prod-icon svg{width:16px;height:16px;stroke:var(--rust);fill:none;stroke-width:1.5}
+.prod-name{font-family:var(--font-display);font-size:14.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--white);margin-bottom:5px;line-height:1.2}
+.prod-cert{font-family:var(--font-mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green-light);margin-bottom:7px}
+.prod-desc{font-size:11px;font-weight:300;color:var(--mid);line-height:1.55}
+/* Specialist CTA card */
+.prod-cta{background:rgba(191,61,10,.07);border:none;display:flex;flex-direction:column;justify-content:space-between}
+.prod-cta-ey{font-family:var(--font-mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--rust-light);margin-bottom:10px}
+.prod-cta-title{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:9px;line-height:1.2}
+.prod-cta-desc{font-size:11px;font-weight:300;color:var(--sand);line-height:1.55;margin-bottom:18px}
+.prod-cta-link{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-light);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+.prod-cta-link:hover{color:var(--white)}
+.prod-cta-link svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ─── GUARANTEE ─── */
+#guarantee{background:var(--green);padding:104px 52px}
+.g-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.g-title{font-family:var(--font-display);font-size:clamp(48px,5.5vw,84px);font-weight:600;line-height:.87;text-transform:uppercase;letter-spacing:.01em;color:white;margin-bottom:22px}
+.g-sub-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px}
+.g-body{font-size:16px;font-weight:300;color:rgba(255,255,255,.82);line-height:1.82;margin-bottom:32px;max-width:480px}
+.g-seal{display:inline-flex;align-items:center;gap:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:16px 22px}
+.g-seal-mark{font-family:var(--font-display);font-size:32px;color:rgba(255,255,255,.6);line-height:1}
+.g-seal-text{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);line-height:1.65}
+.g-pillars{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,.15)}
+.g-pillar{background:rgba(255,255,255,.08);padding:28px 28px}
+.g-pn{font-family:var(--font-mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:11px}
+.g-ptitle{font-family:var(--font-display);font-size:24px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:8px}
+.g-ptext{font-size:13.5px;font-weight:300;color:rgba(255,255,255,.74);line-height:1.72}
+.g-what{margin-top:28px;background:rgba(0,0,0,.15);padding:22px 24px}
+.g-what-title{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+.g-what-items{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g-what-item{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.5}
+.g-what-item::before{content:'✓';color:rgba(255,255,255,.4);font-family:var(--font-mono);font-size:10px;flex-shrink:0;margin-top:2px}
+
+/* ─── TESTIMONIALS ─── */
+#testi{background:var(--charcoal)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:52px}
+.testi-card{background:var(--charcoal);padding:40px 32px}
+.testi-q{font-family:var(--font-display);font-size:52px;color:var(--rust);line-height:.7;margin-bottom:18px;opacity:.55}
+.testi-text{font-size:14.5px;font-weight:300;color:var(--sand);line-height:1.82;font-style:italic;margin-bottom:24px}
+.testi-line{width:24px;height:1px;background:var(--rust);margin-bottom:16px;opacity:.5}
+.testi-name{font-weight:500;font-size:14px;color:var(--white)}
+.testi-role{font-family:var(--font-mono);font-size:10px;color:var(--mid);letter-spacing:.07em;margin-top:5px;line-height:1.4}
+
+/* ─── CONTACT ─── */
+#contact{background:var(--black);padding:100px 52px}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-form-box{background:var(--charcoal);border:1px solid var(--line);padding:44px}
+.cf-title{font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:5px}
+.cf-sub{font-size:13px;font-weight:300;color:var(--mid);margin-bottom:30px;line-height:1.6}
+.f2{margin-bottom:10px}
+.f2-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+input.fi,select.fi,textarea.fi{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--white);
+  padding:13px 15px;
+  border-radius:1px;
+  font-family:var(--font-body);font-size:14px;
+  outline:none;width:100%;
+  transition:border-color .2s;
+}
+input.fi::placeholder,textarea.fi::placeholder{color:rgba(255,255,255,.28)}
+input.fi:focus,select.fi:focus,textarea.fi:focus{border-color:rgba(191,61,10,.55)}
+select.fi{background:var(--char2);cursor:pointer;-webkit-appearance:none}
+select.fi option{background:var(--charcoal)}
+textarea.fi{resize:vertical;min-height:88px;line-height:1.5}
+.f-submit{
+  background:var(--green);color:white;border:none;
+  padding:15px 28px;border-radius:1px;
+  font-family:var(--font-body);font-weight:500;font-size:15px;
+  cursor:pointer;width:100%;
+  transition:background .2s;letter-spacing:.02em;margin-top:4px;
+}
+.f-submit:hover{background:var(--green-mid)}
+.f-note{display:flex;align-items:center;gap:8px;margin-top:11px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;color:rgba(255,255,255,.35)}
+.f-note svg{width:11px;height:11px;stroke:var(--green-light);fill:none;stroke-width:2;flex-shrink:0}
+/* Contact right */
+.contact-right{padding-top:8px;display:flex;flex-direction:column;gap:36px}
+.cr-block-kicker{font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:10px}
+.cr-block-title{font-family:var(--font-display);font-size:30px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:9px}
+.cr-block-text{font-size:14px;font-weight:300;color:var(--sand);line-height:1.78}
+.cr-promise{background:rgba(26,92,53,.15);border:1px solid rgba(26,92,53,.3);padding:18px 20px;display:flex;gap:12px;align-items:flex-start}
+.cr-promise svg{width:18px;height:18px;stroke:var(--green-light);fill:none;stroke-width:1.5;flex-shrink:0;margin-top:1px}
+.cr-promise-text{font-size:13px;font-weight:300;color:var(--sand);line-height:1.65}
+.cr-promise-text strong{color:var(--green-light);font-weight:500}
+.cr-details{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;color:var(--mid);line-height:2.2}
+
+/* ─── FOOTER ─── */
+footer{background:var(--charcoal);padding:64px 52px 36px;border-top:1px solid var(--line)}
+.footer-top{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px}
+.fb-name{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:3px}
+.fb-name span{color:var(--rust)}
+.fb-tag{font-family:var(--font-mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:14px}
+.fb-desc{font-size:13px;font-weight:300;color:var(--mid);line-height:1.72;max-width:250px;margin-bottom:18px}
+.fb-contact{font-family:var(--font-mono);font-size:10.5px;color:var(--mid);letter-spacing:.05em;line-height:2.1}
+.fc-title{font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand);margin-bottom:16px}
+.fc-links{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fc-links a{font-size:13px;font-weight:300;color:var(--mid);text-decoration:none;transition:color .2s}
+.fc-links a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:24px}
+.fb-copy{font-family:var(--font-mono);font-size:9.5px;color:var(--mid);letter-spacing:.06em}
+.fb-social{display:flex;gap:20px}
+.fb-social a{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
+.fb-social a:hover{color:var(--rust-light)}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.rd1{transition-delay:.07s}.rd2{transition-delay:.14s}.rd3{transition-delay:.21s}
+
+/* ─── MOBILE ─── */
+@media(max-width:1024px){
+  nav{padding:0 20px}
+  .nav-menu li:not(:last-child){display:none}
+  section{padding:64px 20px}
+  #hero{grid-template-columns:1fr}.hero-l{padding:52px 20px}.hero-r{display:none}
+  .g-bar{padding:10px 20px;gap:10px}
+  .brief-grid,.serve-intro,.prod-intro,.g-inner,.contact-layout{grid-template-columns:1fr;gap:36px}
+  .serve-grid{grid-template-columns:1fr 1fr}
+  .prod-grid{grid-template-columns:repeat(3,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+  .footer-bottom{flex-direction:column;gap:14px;text-align:center}
+}
+@media(max-width:600px){
+  .serve-grid,.prod-grid{grid-template-columns:1fr 1fr}
+  .brief-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-name">Source<span>Build</span> Australia</span>
+    <span class="nav-brand-tag">Building Product Supply Partner</span>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#brief">How it works</a></li>
+    <li><a href="#serve">Who we serve</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#guarantee">Guarantee</a></li>
+    <li><a href="#contact" class="nav-btn">Get a proposal</a></li>
+  </ul>
+</nav>
+
+<!-- GUARANTEE BAR -->
+<div class="g-bar">
+  <div class="g-bar-inner">
+    <span class="g-bar-label">Complete Satisfaction Supply Guarantee</span>
+    <div class="g-bar-div"></div>
+    <div class="g-bar-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>To your specifications</div>
+    <div class="g-bar-div"></div>
+    <div class="g-bar-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Within your budget</div>
+    <div class="g-bar-div"></div>
+    <div class="g-bar-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>By your delivery date</div>
+    <div class="g-bar-div"></div>
+    <div class="g-bar-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Every proposal — in writing</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-l">
+    <div class="hero-eyebrow">Specialist building product supply · China to Australia nationwide</div>
+    <h1 class="hero-h1">The right<br>products.<br><em>Delivered.</em></h1>
+    <p class="hero-p">
+      <strong>Source Build Australia</strong> is a specialist building product supply partner for builders, developers and contractors across all Australian states and territories.<br><br>
+      We source, coordinate and supply the appropriate building products for your project — to your specifications, within your budget and by your required delivery date.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-p">Get a proposal</a>
+      <a href="#brief" class="btn-o">How it works</a>
+    </div>
+    <div class="hero-segments">
+      <span class="seg-tag">Residential Builders</span>
+      <span class="seg-tag">Commercial Contractors</span>
+      <span class="seg-tag">Property Developers</span>
+      <span class="seg-tag">Trade Contractors</span>
+      <span class="seg-tag">Site & Project Managers</span>
+      <span class="seg-tag">Civil Contractors</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-r-grid"></div>
+    <div class="hero-r-content">
+      <div class="hero-step">
+        <div class="hero-step-n">01</div>
+        <div class="hero-step-body">
+          <div class="hero-step-kicker">What we need from you</div>
+          <div class="hero-step-title">You brief us</div>
+          <div class="hero-step-desc">Specifications, quantities, budget and delivery date — that is all we need to start. We handle everything from there.</div>
+        </div>
+      </div>
+      <div class="hero-step">
+        <div class="hero-step-n">02</div>
+        <div class="hero-step-body">
+          <div class="hero-step-kicker">What we do</div>
+          <div class="hero-step-title">We source it</div>
+          <div class="hero-step-desc">We leverage our national supplier network and handle all procurement logistics on your behalf.</div>
+        </div>
+      </div>
+      <div class="hero-step">
+        <div class="hero-step-n">03</div>
+        <div class="hero-step-body">
+          <div class="hero-step-kicker">What you get</div>
+          <div class="hero-step-title">We deliver it</div>
+          <div class="hero-step-desc">On time, to specification, within budget. Backed by our Complete Satisfaction Supply Guarantee on every proposal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="mq-item">Cabinetry & Joinery <span>✦</span></span>
+    <span class="mq-item">Windows, Glazing & Aluminium <span>✦</span></span>
+    <span class="mq-item">Doors, Hardware & Access <span>✦</span></span>
+    <span class="mq-item">Roofing & Façade Cladding <span>✦</span></span>
+    <span class="mq-item">Stone Benchtops & Vanities <span>✦</span></span>
+    <span class="mq-item">Plumbing Fixtures & Sanitaryware <span>✦</span></span>
+    <span class="mq-item">Bathrooms, Kitchens & Wet Areas <span>✦</span></span>
+    <span class="mq-item">Engineered & Floating Timber Flooring <span>✦</span></span>
+    <span class="mq-item">Tiles & Surface Finishes <span>✦</span></span>
+    <span class="mq-item">Specialist & Trade-Specific Supply <span>✦</span></span>
+    <span class="mq-item">Cabinetry & Joinery <span>✦</span></span>
+    <span class="mq-item">Windows, Glazing & Aluminium <span>✦</span></span>
+    <span class="mq-item">Doors, Hardware & Access <span>✦</span></span>
+    <span class="mq-item">Roofing & Façade Cladding <span>✦</span></span>
+    <span class="mq-item">Stone Benchtops & Vanities <span>✦</span></span>
+    <span class="mq-item">Plumbing Fixtures & Sanitaryware <span>✦</span></span>
+    <span class="mq-item">Bathrooms, Kitchens & Wet Areas <span>✦</span></span>
+    <span class="mq-item">Engineered & Floating Timber Flooring <span>✦</span></span>
+    <span class="mq-item">Tiles & Surface Finishes <span>✦</span></span>
+    <span class="mq-item">Specialist & Trade-Specific Supply <span>✦</span></span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS / BRIEF SECTION -->
+<section id="brief">
+  <div class="sec-kicker">How it works</div>
+  <h2 class="sec-h">Simple to start.<br><em>Backed end to end.</em></h2>
+  <div class="brief-grid reveal">
+    <div class="brief-col">
+      <div class="brief-col-title">What we need from you</div>
+      <div class="brief-items">
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text"><strong>Specifications</strong> — product type, grade, finish, or drawings</div></div>
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text"><strong>Quantities</strong> — how much of each product you need</div></div>
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text"><strong>Budget</strong> — your budget parameters for the supply package</div></div>
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text"><strong>Delivery date</strong> — when you need it on site and where</div></div>
+      </div>
+      <div class="brief-promise">
+        <div class="brief-promise-icon">→</div>
+        <div class="brief-promise-text">
+          <strong>We return a formal proposal within 48 hours</strong>
+          Your proposal includes fixed pricing, a committed delivery date, and is backed in writing by our Complete Satisfaction Supply Guarantee.
+        </div>
+      </div>
+    </div>
+    <div class="brief-col">
+      <div class="brief-col-title">What we do</div>
+      <div class="brief-items">
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text">Leverage our <strong>national supplier network</strong> to source the right products at the right price</div></div>
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text">Handle all <strong>procurement logistics</strong> — sourcing, compliance verification, coordination</div></div>
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text">Manage <strong>end-to-end supply</strong> from origin through to site delivery</div></div>
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text">Supply all relevant <strong>compliance and certification</strong> documentation with every order</div></div>
+        <div class="brief-item"><div class="brief-item-dot"></div><div class="brief-item-text">Provide a <strong>single point of contact</strong> across multiple product categories and suppliers</div></div>
+      </div>
+      <div class="brief-promise">
+        <div class="brief-promise-icon">✦</div>
+        <div class="brief-promise-text">
+          <strong>Complete Satisfaction Supply Guarantee</strong>
+          To your specifications. Within your budget. By your delivery date. Applied to every proposal we issue — without exception.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section id="serve">
+  <div class="serve-intro reveal">
+    <div>
+      <div class="sec-kicker">Who we serve</div>
+      <h2 class="sec-h">Built for every<br><em>project type</em></h2>
+    </div>
+    <p class="sec-p">We work across the full construction sector — from residential builders and trade contractors through to major developers and civil contractors. If you build it, we can supply it.</p>
+  </div>
+  <div class="serve-grid">
+    <div class="serve-card reveal">
+      <div class="serve-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="serve-title">Residential Builders</div>
+      <div class="serve-desc">Custom home builders, volume builders and residential construction companies needing reliable product supply coordinated to programme across multiple sites.</div>
+      <div class="serve-tags"><span class="stag">Windows & glazing</span><span class="stag">Kitchens & bathrooms</span><span class="stag">Flooring & tiles</span><span class="stag">Cabinetry & joinery</span></div>
+    </div>
+    <div class="serve-card reveal rd1">
+      <div class="serve-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="1"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+      <div class="serve-title">Commercial Contractors</div>
+      <div class="serve-desc">Commercial construction companies managing multi-storey, fitout and large-scale builds requiring project-scale product supply with full compliance documentation.</div>
+      <div class="serve-tags"><span class="stag">Façade cladding</span><span class="stag">Doors & hardware</span><span class="stag">Roofing systems</span><span class="stag">Surface finishes</span></div>
+    </div>
+    <div class="serve-card reveal rd2">
+      <div class="serve-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+      <div class="serve-title">Property Developers</div>
+      <div class="serve-desc">Residential and mixed-use developers managing cost, programme and quality across multiple projects — where supply chain efficiency directly impacts margin.</div>
+      <div class="serve-tags"><span class="stag">Full fitout packages</span><span class="stag">Stone benchtops</span><span class="stag">Windows & doors</span><span class="stag">Bathrooms & kitchens</span></div>
+    </div>
+    <div class="serve-card reveal">
+      <div class="serve-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="serve-title">Trade Contractors</div>
+      <div class="serve-desc">Plumbers, tilers, roofers, joiners and specialist trade contractors who need product supply coordinated precisely with their installation schedule.</div>
+      <div class="serve-tags"><span class="stag">Trade-specific supply</span><span class="stag">Plumbing fixtures</span><span class="stag">Tiles & flooring</span><span class="stag">Roofing systems</span></div>
+    </div>
+    <div class="serve-card reveal rd1">
+      <div class="serve-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="serve-title">Site & Project Managers</div>
+      <div class="serve-desc">Project managers and site superintendents who need a single reliable supply contact across multiple categories — reducing supplier relationships and coordination overhead.</div>
+      <div class="serve-tags"><span class="stag">Multi-category supply</span><span class="stag">Programme-critical</span><span class="stag">Compliance docs</span><span class="stag">All states & territories</span></div>
+    </div>
+    <div class="serve-card reveal rd2">
+      <div class="serve-icon"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+      <div class="serve-title">Civil Contractors</div>
+      <div class="serve-desc">Civil and infrastructure contractors requiring specialist, large-volume or hard-to-source products — coordinated and delivered to site on programme.</div>
+      <div class="serve-tags"><span class="stag">Large volume orders</span><span class="stag">Specialist supply</span><span class="stag">Nationwide delivery</span><span class="stag">Infrastructure</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="prod-intro reveal">
+    <div>
+      <div class="sec-kicker">What we supply</div>
+      <h2 class="sec-h">Ten product<br><em>categories.</em></h2>
+    </div>
+    <p class="sec-p">We supply across the full building product spectrum — from structure and envelope through to finished interiors. All products sourced and supplied with relevant Australian compliance documentation as standard.</p>
+  </div>
+  <div class="prod-grid reveal">
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="11" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="18" width="7" height="3" rx="1"/></svg></div>
+      <div class="prod-name">Cabinetry & Joinery</div>
+      <div class="prod-cert">E0 board · CARB P2 · Soft-close</div>
+      <div class="prod-desc">Kitchens, bathroom vanities, laundry joinery, wardrobes, and custom cabinetry to your layout. Flat-pack or pre-assembled, E0-compliant.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div>
+      <div class="prod-name">Windows, Glazing & Aluminium Systems</div>
+      <div class="prod-cert">AS 2047 · NCC · WERS rated</div>
+      <div class="prod-desc">Fixed, sliding, awning, casement, and bifold windows. Aluminium framing systems and glazing. Custom sizes to your drawings.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="prod-name">Doors, Hardware & Access</div>
+      <div class="prod-cert">AS 1905 · NCC compliant</div>
+      <div class="prod-desc">Residential and commercial doors, fire-rated assemblies, hardware suites, and door frames. Internal and external applications.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7"/><path d="M3 9v11h18V9"/><path d="M9 22V12h6v10"/></svg></div>
+      <div class="prod-name">Roofing Systems & Façade Cladding</div>
+      <div class="prod-cert">NCC compliant · BCA Sec J</div>
+      <div class="prod-desc">Metal roofing, insulated panels, facade cladding systems, and rainscreen systems for residential and commercial applications.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <div class="prod-name">Stone Benchtops, Countertops & Vanities</div>
+      <div class="prod-cert">Engineered · Natural stone</div>
+      <div class="prod-desc">Engineered stone and natural stone benchtops, kitchen counters, and bathroom vanity tops. Custom sizes and edge profiles to specification.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/><circle cx="5" cy="12" r="2"/></svg></div>
+      <div class="prod-name">Plumbing Fixtures & Sanitaryware</div>
+      <div class="prod-cert">WaterMark · WELS · AS 3718</div>
+      <div class="prod-desc">WaterMark-certified tapware, mixers, basins, pans, cisterns, and valves. WELS ratings supplied with every product, every time.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M3 11h18M8 8V5a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="prod-name">Bathrooms, Kitchens & Wet Areas</div>
+      <div class="prod-cert">WaterMark · NCC · E0 board</div>
+      <div class="prod-desc">Complete bathroom and kitchen supply packages — cabinetry, sanitaryware, tapware, stone, and accessories. Coordinated from a single source.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z"/><rect x="2" y="8" width="20" height="12" rx="1"/><line x1="6" y1="12" x2="18" y2="12"/></svg></div>
+      <div class="prod-name">Engineered & Floating Timber Flooring</div>
+      <div class="prod-cert">E0/E1 · AS/NZS 1080 · NAUF</div>
+      <div class="prod-desc">Engineered hardwood and floating timber flooring systems. Multiple species, finishes, and board widths. E0-compliant substrates throughout.</div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="8" y1="9" x2="8" y2="20"/></svg></div>
+      <div class="prod-name">Tiles & Surface Finishes</div>
+      <div class="prod-cert">ISO 13006 · AS 4459 · Slip rated</div>
+      <div class="prod-desc">Porcelain, ceramic, stone-look, and large-format tiles. Feature walls, floor finishes, and facade cladding. Project volumes, batch-matched.</div>
+    </div>
+
+    <!-- Specialist CTA -->
+    <div class="prod-card prod-cta">
+      <div>
+        <div class="prod-cta-ey">Category 10</div>
+        <div class="prod-cta-title">Specialist & Trade-Specific Supply</div>
+        <div class="prod-cta-desc">If it's a building product and you need it, we can source and coordinate it. Our network extends well beyond the categories listed here.</div>
+      </div>
+      <a href="#contact" class="prod-cta-link">
+        Talk to us
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section id="guarantee" style="padding:104px 52px">
+  <div class="g-inner">
+    <div class="reveal">
+      <div class="g-sub-label">Our commitment</div>
+      <h2 class="g-title">Complete<br>Satisfaction<br>Supply<br>Guarantee</h2>
+      <p class="g-body">Our Complete Satisfaction Supply Guarantee backs every proposal we issue. It is not a marketing statement — it is a written commitment applied to every order, every product, every time.</p>
+      <div class="g-seal">
+        <div class="g-seal-mark">✦</div>
+        <div class="g-seal-text">Applies to every proposal<br>issued by Source Build Australia<br>All states & territories</div>
+      </div>
+      <div class="g-what">
+        <div class="g-what-title">What we need from you to activate it</div>
+        <div class="g-what-items">
+          <div class="g-what-item">Your specifications</div>
+          <div class="g-what-item">Your quantities</div>
+          <div class="g-what-item">Your budget</div>
+          <div class="g-what-item">Your delivery date</div>
+        </div>
+      </div>
+    </div>
+    <div class="g-pillars reveal rd1">
+      <div class="g-pillar">
+        <div class="g-pn">Guarantee 01 of 03</div>
+        <div class="g-ptitle">To your specifications</div>
+        <div class="g-ptext">We supply exactly what you specify. Products are verified against your specification before dispatch. If it doesn't match, we fix it — at our cost, not yours.</div>
+      </div>
+      <div class="g-pillar">
+        <div class="g-pn">Guarantee 02 of 03</div>
+        <div class="g-ptitle">Within your budget</div>
+        <div class="g-ptext">The price on your accepted proposal is your final invoice. No freight add-ons, no scope creep charges. Your budget is your budget — fixed in writing from acceptance.</div>
+      </div>
+      <div class="g-pillar">
+        <div class="g-pn">Guarantee 03 of 03</div>
+        <div class="g-ptitle">By your delivery date</div>
+        <div class="g-ptext">We commit to your required delivery date in writing. If we miss it for any reason within our control, we make it right. Your programme is protected.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi">
+  <div class="sec-kicker">From the field</div>
+  <h2 class="sec-h">What our clients<br><em>say</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-q">"</div>
+      <div class="testi-text">Source Build handled the full bathroom and kitchen package across our 16-townhouse development. One point of contact, everything coordinated to our programme, compliance documentation clean first pass through council. That kind of reliability is hard to find.</div>
+      <div class="testi-line"></div>
+      <div class="testi-name">James H.</div>
+      <div class="testi-role">Director · Residential developer · Melbourne VIC</div>
+    </div>
+    <div class="testi-card reveal rd1">
+      <div class="testi-q">"</div>
+      <div class="testi-text">We use them for facade cladding, roofing systems, and joinery across our commercial projects. They understand NCC requirements, the pricing is competitive, and they have not missed a critical delivery date on our programme. That track record matters when you're running a commercial build.</div>
+      <div class="testi-line"></div>
+      <div class="testi-name">Mark T.</div>
+      <div class="testi-role">Project Director · Commercial contractor · Sydney NSW</div>
+    </div>
+    <div class="testi-card reveal rd2">
+      <div class="testi-q">"</div>
+      <div class="testi-text">As a project manager I manage too many supplier relationships. Source Build are our go-to for building products we can't source competitively locally — windows, stone benchtops, tiles, bathroom fittings. One call, one proposal, one delivery. That simplicity has genuine value on a busy site.</div>
+      <div class="testi-line"></div>
+      <div class="testi-name">Sarah L.</div>
+      <div class="testi-role">Senior Project Manager · Brisbane QLD</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-layout">
+    <div>
+      <div class="sec-kicker">Get started</div>
+      <h2 class="sec-h">Brief us on<br>your <em>project</em></h2>
+      <div class="contact-right">
+        <div>
+          <div class="cr-block-kicker">What we need from you</div>
+          <div class="cr-block-title">Just the four things</div>
+          <div class="cr-block-text">Specifications or drawings, quantities, budget, and your required delivery date. That's all we need to return a formal proposal. We handle everything else from there.</div>
+        </div>
+        <div class="cr-promise">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div class="cr-promise-text">We return a formal proposal within <strong>48 hours</strong> of receiving your brief — with fixed pricing, a committed delivery date, and our <strong>Complete Satisfaction Supply Guarantee</strong> applied in writing.</div>
+        </div>
+        <div>
+          <div class="cr-block-kicker">Coverage</div>
+          <div class="cr-block-title">All states & territories</div>
+          <div class="cr-block-text">We coordinate supply and delivery anywhere in Australia — VIC, NSW, QLD, WA, SA, TAS, NT and ACT. National and multi-site projects welcome.</div>
+        </div>
+        <div class="cr-details">
+          hello@sourcebuildaustralia.com.au<br>
+          Melbourne, VIC · Australia-wide
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-box reveal">
+      <div class="cf-title">Proposal request</div>
+      <div class="cf-sub">Tell us about your project and what you need. We'll review and return a formal proposal within 48 hours.</div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="f2-row">
+          <input type="text" class="fi" placeholder="First name" required>
+          <input type="text" class="fi" placeholder="Last name" required>
+        </div>
+        <div class="f2-row">
+          <input type="text" class="fi" placeholder="Company name" required>
+          <input type="email" class="fi" placeholder="Email address" required>
+        </div>
+        <div class="f2">
+          <input type="tel" class="fi" placeholder="Phone number">
+        </div>
+        <div class="f2">
+          <select class="fi">
+            <option value="" disabled selected>I am a...</option>
+            <option>Residential builder</option>
+            <option>Commercial contractor</option>
+            <option>Property developer</option>
+            <option>Trade contractor</option>
+            <option>Site / project manager</option>
+            <option>Civil contractor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="f2">
+          <select class="fi">
+            <option value="" disabled selected>Product category required</option>
+            <option>Cabinetry & Joinery</option>
+            <option>Windows, Glazing & Aluminium Systems</option>
+            <option>Doors, Hardware & Access</option>
+            <option>Roofing Systems & Façade Cladding</option>
+            <option>Stone Benchtops, Countertops & Vanities</option>
+            <option>Plumbing Fixtures & Sanitaryware</option>
+            <option>Bathrooms, Kitchens & Wet Areas</option>
+            <option>Engineered & Floating Timber Flooring</option>
+            <option>Tiles & Surface Finishes</option>
+            <option>Specialist / Trade-Specific Supply</option>
+            <option>Multiple categories</option>
+          </select>
+        </div>
+        <div class="f2-row">
+          <select class="fi">
+            <option value="" disabled selected>State / territory</option>
+            <option>VIC</option><option>NSW</option><option>QLD</option>
+            <option>WA</option><option>SA</option><option>TAS</option>
+            <option>NT</option><option>ACT</option><option>National / multiple</option>
+          </select>
+          <input type="date" class="fi" title="Required on-site delivery date">
+        </div>
+        <div class="f2">
+          <textarea class="fi" placeholder="Project description — specs, quantities, project type, or anything else useful. You can attach drawings or spec sheets by email after submitting." required></textarea>
+        </div>
+        <button type="submit" class="f-submit">Submit proposal request</button>
+        <div class="f-note">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          Backed by our Complete Satisfaction Supply Guarantee
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="fb-name">Source<span>Build</span> Australia</div>
+      <div class="fb-tag">Specialist Building Product Supply Partner</div>
+      <p class="fb-desc">We source, coordinate and supply the appropriate building products for your project — to your specifications, within your budget and by your required delivery date. Complete Satisfaction Supply Guarantee backs every proposal.</p>
+      <div class="fb-contact">
+        hello@sourcebuildaustralia.com.au<br>
+        Melbourne, VIC · Australia-wide · All states & territories
+      </div>
+    </div>
+    <div>
+      <div class="fc-title">Products</div>
+      <ul class="fc-links">
+        <li><a href="#products">Cabinetry & Joinery</a></li>
+        <li><a href="#products">Windows, Glazing & Aluminium</a></li>
+        <li><a href="#products">Doors, Hardware & Access</a></li>
+        <li><a href="#products">Roofing & Façade Cladding</a></li>
+        <li><a href="#products">Stone Benchtops & Vanities</a></li>
+        <li><a href="#products">Plumbing & Sanitaryware</a></li>
+        <li><a href="#products">Bathrooms & Kitchens</a></li>
+        <li><a href="#products">Timber Flooring</a></li>
+        <li><a href="#products">Tiles & Surface Finishes</a></li>
+        <li><a href="#products">Specialist Supply</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fc-title">Company</div>
+      <ul class="fc-links">
+        <li><a href="#serve">Who we serve</a></li>
+        <li><a href="#brief">How it works</a></li>
+        <li><a href="#guarantee">Supply guarantee</a></li>
+        <li><a href="#testi">Client stories</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fc-title">Get started</div>
+      <ul class="fc-links">
+        <li><a href="#contact">Submit a brief</a></li>
+        <li><a href="sba-proposal.html">Full proposal form</a></li>
+        <li><a href="sba-case-studies.html">Case studies</a></li>
+        <li><a href="sba-onboarding.html">Client portal</a></li>
+        <li><a href="sba-calculator.html">Savings calculator</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="fb-copy">© 2025 Source Build Australia Pty Ltd · Melbourne VIC · All states & territories · Complete Satisfaction Supply Guarantee applies to all proposals</span>
+    <div class="fb-social">
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">TikTok</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Form submit
+function handleSubmit(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('.f-submit');
+  btn.textContent = 'Proposal request submitted — we\'ll be in touch within 48 hours ✓';
+  btn.style.background = '#1a5c35';
+  btn.disabled = true;
+  e.target.querySelectorAll('input,select,textarea').forEach(el => el.disabled = true);
+}
+
+// Marquee pause on hover
+const track = document.querySelector('.marquee-track');
+document.querySelector('.marquee').addEventListener('mouseenter', () => track.style.animationPlayState='paused');
+document.querySelector('.marquee').addEventListener('mouseleave', () => track.style.animationPlayState='running');
+</script>
+</body>
 </html>
