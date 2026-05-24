@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 
-const NAV_LINKS = ['Home', 'Projects', 'Services']
+const NAV_LINKS = [
+  { label: 'Home', href: '#' },
+  { label: 'Products', href: '#works' },
+  { label: 'Process', href: '#contact' },
+]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -27,17 +31,18 @@ export default function Navbar() {
 
         {/* Nav links */}
         {NAV_LINKS.map(link => (
-          <button
-            key={link}
-            onClick={() => setActive(link)}
+          <a
+            key={link.label}
+            href={link.href}
+            onClick={() => setActive(link.label)}
             className={`text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 transition-colors duration-200 ${
-              active === link
+              active === link.label
                 ? 'text-text-primary bg-stroke/50'
                 : 'text-muted hover:text-text-primary hover:bg-stroke/50'
             }`}
           >
-            {link}
-          </button>
+            {link.label}
+          </a>
         ))}
 
         {/* Divider */}

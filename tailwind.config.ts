@@ -25,6 +25,8 @@ const config: Config = {
         'scroll-down': 'scroll-down 1.5s ease-in-out infinite',
         'role-fade-in': 'role-fade-in 0.4s ease-out',
         'gradient-shift': 'gradient-shift 6s ease infinite',
+        'subtle-zoom': 'subtle-zoom 22s ease-in-out infinite alternate',
+        'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
       },
       keyframes: {
         'scroll-down': {
@@ -39,6 +41,14 @@ const config: Config = {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
+        },
+        'subtle-zoom': {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '0.7' },
+          '50%': { opacity: '1' },
         },
       },
     },
