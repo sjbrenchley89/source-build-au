@@ -33,11 +33,11 @@ body {
 }
 
 .accent-gradient {
-  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  background: linear-gradient(90deg, #F26522 0%, #D4561A 100%);
 }
 
 .accent-gradient-border {
-  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  background: linear-gradient(90deg, #F26522 0%, #D4561A 100%);
   background-size: 200% 200%;
   animation: gradient-shift 6s ease infinite;
 }

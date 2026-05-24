@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
-const WORDS = ['Design', 'Create', 'Inspire']
+const WORDS = ['Source', 'Supply', 'Build']
 const DURATION_MS = 2700
 
 interface Props {
@@ -50,7 +50,7 @@ export default function LoadingScreen({ onComplete }: Props) {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
-        Portfolio
+        Source Build
       </motion.span>
 
       {/* Center word */}

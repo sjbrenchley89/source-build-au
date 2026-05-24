@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const NAV_LINKS = ['Home', 'Work', 'Resume']
+const NAV_LINKS = ['Home', 'Projects', 'Services']
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -43,8 +43,8 @@ export default function Navbar() {
         {/* Divider */}
         <span className="hidden sm:block w-px h-5 bg-stroke mx-1" />
 
-        {/* Say hi button */}
-        <SayHiButton />
+        {/* Get a Quote button */}
+        <QuoteButton />
       </div>
     </nav>
   )
@@ -60,30 +60,30 @@ function LogoButton() {
       className="relative w-9 h-9 rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-110 mr-1"
       style={{
         background: hovered
-          ? 'linear-gradient(270deg, #89AACC 0%, #4E85BF 100%)'
-          : 'linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)',
+          ? 'linear-gradient(270deg, #F26522 0%, #D4561A 100%)'
+          : 'linear-gradient(90deg, #F26522 0%, #D4561A 100%)',
         padding: '2px',
       }}
     >
       <span className="w-full h-full rounded-full bg-bg flex items-center justify-center">
-        <span className="font-display italic text-[13px] text-text-primary">JA</span>
+        <span className="font-display italic text-[13px] text-text-primary">SB</span>
       </span>
     </button>
   )
 }
 
-function SayHiButton() {
+function QuoteButton() {
   return (
     <div className="relative group ml-1">
       <span
         className="absolute inset-[-2px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{ background: 'linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)' }}
+        style={{ background: 'linear-gradient(90deg, #F26522 0%, #D4561A 100%)' }}
       />
       <a
-        href="mailto:hello@michaelsmith.com"
+        href="mailto:info@sourcebuildaustralia.com.au"
         className="relative z-10 flex items-center gap-1 bg-surface rounded-full backdrop-blur-md text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 text-muted hover:text-text-primary transition-colors duration-200"
       >
-        Say hi <span>&#8599;</span>
+        Get a Quote <span>&#8599;</span>
       </a>
     </div>
   )
