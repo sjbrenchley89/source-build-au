@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react'
-import Hls from 'hls.js'
 import { gsap } from 'gsap'
 import { motion } from 'framer-motion'
 
-const HLS_SRC = 'https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8'
+const BG_IMG = 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80'
 const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: '#' },
   { label: 'Instagram', href: '#' },
@@ -12,21 +11,7 @@ const SOCIAL_LINKS = [
 const MARQUEE_TEXT = 'SOURCED GLOBALLY • BUILT LOCALLY • COMPLETE SATISFACTION GUARANTEED • '
 
 export default function Contact() {
-  const videoRef = useRef<HTMLVideoElement>(null)
   const marqueeRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-    if (Hls.isSupported()) {
-      const hls = new Hls()
-      hls.loadSource(HLS_SRC)
-      hls.attachMedia(video)
-      return () => { hls.destroy() }
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = HLS_SRC
-    }
-  }, [])
 
   useEffect(() => {
     const marquee = marqueeRef.current
@@ -38,14 +23,21 @@ export default function Contact() {
   return (
     <section id="contact" className="relative bg-bg pt-16 md:pt-20 pb-8 md:pb-12 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
-        <video ref={videoRef} autoPlay muted loop playsInline
-          className="absolute top-1/2 left-1/2 min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2"
-          style={{ transform: 'translateX(-50%) translateY(-50%) scaleY(-1)' }} />
-        <div className="absolute inset-0 bg-black/70" />
+        <img src={BG_IMG} alt="" className="absolute inset-0 w-full h-full object-cover animate-subtle-zoom" />
+        {/* Blueprint grid overlay */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: `linear-gradient(rgba(242,101,34,0.04) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(242,101,34,0.04) 1px, transparent 1px)`,
+            backgroundSize: '80px 80px',
+          }} />
+        <div className="absolute inset-0 bg-black/78" />
+        {/* Orange accent glow */}
+        <div className="absolute top-1/2 left-1/4 w-[450px] h-[450px] rounded-full pointer-events-none -translate-y-1/2 animate-pulse-glow"
+          style={{ background: 'radial-gradient(circle, rgba(242,101,34,0.1) 0%, transparent 70%)' }} />
       </div>
 
       <div className="relative z-10">
-
         {/* Marquee */}
         <div className="overflow-hidden mb-16 md:mb-20">
           <div ref={marqueeRef} className="flex whitespace-nowrap" style={{ width: '200%' }}>
@@ -103,7 +95,6 @@ export default function Contact() {
             <p className="text-xs text-muted/40">&copy; 2026 Source Build Australia. All rights reserved.</p>
           </div>
         </div>
-
       </div>
     </section>
   )
